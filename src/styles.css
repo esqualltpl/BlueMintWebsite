@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+.display1 {
+    color: var(--neutral--800);
+    font-size: 102px;
+    font-weight: 800;
+    line-height: .99em;
+}
+.inner-container {
+    max-width: 1080px !important;
+}
+.paragraph-large.mg-bottom-40px.max-w-812px {
+    max-width: 812px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paragraph-large {
+    font-size: 22px;
+    line-height: 1.727em;
+}
+.mg-bottom-40px {
+    margin-bottom: 40px;
+}
+.btn-primary {
+    background-color:#3fd6d4 !important;
+    border-color: #3fd6d4 !important;
+}
+.display2 {
+    margin-top: 0;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.167em;
+}
+.heading-h3-size {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.417em;
+}
+.color-neutral-400 {
+    color: #bcbcbc;
+}
+.border-radius-64px {
+    clear: none;
+    background-color: #6bfffd;
+    background-image: linear-gradient(180deg, var(--accent--primary-1), white);
+    -webkit-text-fill-color: inherit;
+    vertical-align: baseline;
+    object-position: 50% 50%;
+    background-clip: padding-box;
+    flex: 0 auto;
+    align-self: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: static;
+    top: 0;
+    left: -1px;
+}
+.h2-quote {
+    margin-bottom: 0;
+    font-size: 94px;
+    font-weight: 700;
+    line-height: .99em;
+}
