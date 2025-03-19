@@ -5,7 +5,7 @@
     font-weight: 800;
     line-height: .99em;
 }
-.inner-container {
+.inner-container1 {
     max-width: 1080px !important;
 }
 .paragraph-large.mg-bottom-40px.max-w-812px {
@@ -30,6 +30,7 @@
     font-size: 60px;
     font-weight: 700;
     line-height: 1.167em;
+    color: whitesmoke;
 }
 .heading-h3-size {
     font-size: 24px;
@@ -63,4 +64,13 @@
     font-size: 94px;
     font-weight: 700;
     line-height: .99em;
+}
+.submitbtn
+{
+    background-color: #242446 !important;
+}
+.submitbtn:hover
+{
+    background-color: #3fd6d4 !important;
+
 }
