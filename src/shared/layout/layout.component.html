@@ -1,0 +1,205 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+    :host {
+      --bright-blue: oklch(51.01% 0.274 263.83);
+      --electric-violet: oklch(53.18% 0.28 296.97);
+      --french-violet: oklch(47.66% 0.246 305.88);
+      --vivid-pink: oklch(69.02% 0.277 332.77);
+      --hot-red: oklch(61.42% 0.238 15.34);
+      --orange-red: oklch(63.32% 0.24 31.68);
+  
+      --gray-900: oklch(19.37% 0.006 300.98);
+      --gray-700: oklch(36.98% 0.014 302.71);
+      --gray-400: oklch(70.9% 0.015 304.04);
+  
+      --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+        180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%
+      );
+  
+      --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+        90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%
+      );
+  
+      --pill-accent: var(--bright-blue);
+  
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  
+    h1 {
+      font-size: 3.125rem;
+      color: var(--gray-900);
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -0.125rem;
+      margin: 0;
+      font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    }
+  
+    p {
+      margin: 0;
+      color: var(--gray-700);
+    }
+  
+    main {
+      width: 100%;
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: inherit;
+      position: relative;
+    }
+  
+    .angular-logo {
+      max-width: 9.2rem;
+    }
+  
+    .content {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
+  
+    .content h1 {
+      margin-top: 1.75rem;
+    }
+  
+    .content p {
+      margin-top: 1.5rem;
+    }
+  
+    .divider {
+      width: 1px;
+      background: var(--red-to-pink-to-purple-vertical-gradient);
+      margin-inline: 0.5rem;
+    }
+  
+    .pill-group {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+  
+    .pill {
+      display: flex;
+      align-items: center;
+      --pill-accent: var(--bright-blue);
+      background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+      color: var(--pill-accent);
+      padding-inline: 0.75rem;
+      padding-block: 0.375rem;
+      border-radius: 2.75rem;
+      border: 0;
+      transition: background 0.3s ease;
+      font-family: var(--inter-font);
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.4rem;
+      letter-spacing: -0.00875rem;
+      text-decoration: none;
+    }
+  
+    .pill:hover {
+      background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+    }
+  
+    .pill-group .pill:nth-child(6n + 1) {
+      --pill-accent: var(--bright-blue);
+    }
+    .pill-group .pill:nth-child(6n + 2) {
+      --pill-accent: var(--french-violet);
+    }
+    .pill-group .pill:nth-child(6n + 3),
+    .pill-group .pill:nth-child(6n + 4),
+    .pill-group .pill:nth-child(6n + 5) {
+      --pill-accent: var(--hot-red);
+    }
+  
+    .pill-group svg {
+      margin-inline-start: 0.25rem;
+    }
+  
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 0.73rem;
+      margin-top: 1.5rem;
+    }
+  
+    .social-links path {
+      transition: fill 0.3s ease;
+      fill: var(--gray-400);
+    }
+  
+    .social-links a:hover svg path {
+      fill: var(--gray-900);
+    }
+  
+    @media screen and (max-width: 650px) {
+      .content {
+        flex-direction: column;
+        width: max-content;
+      }
+  
+      .divider {
+        height: 1px;
+        width: 100%;
+        background: var(--red-to-pink-to-purple-horizontal-gradient);
+        margin-block: 1.5rem;
+      }
+    }
+  </style>
+  
+  <div class="container-fluid bg-transparent" style="border-bottom: 1px solid white;padding: 10px">
+  <div class="container bg-transparent">
+  
+    <nav class="navbar py-4 navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="/" style="width: 120px;margin-left: 180px;"><img src="Images/Logo.png" alt="Logo" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <a class="nav-link" href="#" style="margin-left: 320px; font-size: 20px;color: white;">Home <span class="sr-only"></span></a>
+      </div>
+      <a class="nav-link btn btn-info" href="/login" style="    color: white;background-color: #3fd6d4;padding: 5px 20px;border-radius: 20px;font-weight: 600;">Login <span class="sr-only"></span></a>
+  
+    </nav>
+  </div>
+  </div>
+  <router-outlet></router-outlet>
+
+  
+  <footer class="footer"><div class="container-default w-container"><footer class="footer-wrapper"><div class="w-layout-grid grid-footer---main"><div class="inner-container _350px---tablet"><a href="/old-home" class="footer-logo-wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/678bb8875ff93824f853ea38_logo_white_text.png" sizes="(max-width: 1919px) 250px, 300px" width="500" height="500" alt="" srcset="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/678bb8875ff93824f853ea38_logo_white_text-p-500.png 500w, https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/678bb8875ff93824f853ea38_logo_white_text-p-800.png 800w, https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/678bb8875ff93824f853ea38_logo_white_text.png 1000w" class="footer-logo"></a><p class="text-white max-w-358px mg-bottom-40px">Copyright © 2025 bluemint co Technologies.</p></div><div class="menu-wrapper---main"><div class="menu-wrapper"><div class="mg-bottom-32px"><div class="text-400 bold color-neutral-100">Company</div></div><div class="nav-content"><ul role="list" class="nav-menu-list-wrapper"><li class="nav-menu-list-item"><a href="/" aria-current="page" class="nav-link w--current">Home</a></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li></ul><ul role="list" class="nav-menu-list-wrapper last"><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li><li class="nav-menu-list-item"></li></ul></div></div></div></div></footer></div></footer>
+
+<div class="section hide"><div class="container-default w-container"><div class="inner-container _600px---tablet center"><div class="mg-bottom-40px"><div class="text-center---tablet"><div data-w-id="546346d7-0481-dd68-7abe-98e940dd938a" style="transform: translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 0; transform-style: preserve-3d;" class="w-layout-grid grid-2-columns title-and-buttons _1-col-tablet"><h2 class="display2 mg-bottom-0">Articles <span class="text-no-wrap">&amp; News</span></h2><div id="w-node-_1448c037-d34d-fd5d-a9a3-ea42b0b3c34a-dba98d03"><a href="#" class="btn-primary w-button">Browse all</a></div></div></div></div><div data-w-id="546346d7-0481-dd68-7abe-98e940dd9398" style="transform: translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 0; transform-style: preserve-3d;" class="w-dyn-list"><div role="list" class="grid-3-columns section-blog-grid w-dyn-items"><div role="listitem" class="w-dyn-item"><a data-w-id="546346d7-0481-dd68-7abe-98e940dd939b" href="/blog/savings-by-age-rules-to-know-how-much-you-should-save" class="blog-card-wrapper w-inline-block"><div class="blog-card-image-wrapper mg-bottom-32px width-100"><div class="card-wrapper width-100"><img src="https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e40_thumbnail-1-blog-aptonic-template.png" alt="Savings by age: Rules to know how much you should save" sizes="100vw" srcset="https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e40_thumbnail-1-blog-aptonic-template-p-500.png 500w, https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e40_thumbnail-1-blog-aptonic-template.png 800w" class="blog-card-image"></div></div><div class="blog-card-content"><div class="flex-horizontal start mg-bottom-24px"><h3 class="blog-card-title">Savings by age: Rules to know how much you should save</h3></div><div class="mg-top-auto"><div class="flex-horizontal justify-space"><div class="text-200">Oct 26, 2022</div><div class="circle-arrow"><div class="line-square-icon"></div></div></div></div></div></a></div><div role="listitem" class="w-dyn-item"><a data-w-id="546346d7-0481-dd68-7abe-98e940dd939b" href="/blog/aptonic-is-now-available-on-ipados-try-it-now" class="blog-card-wrapper w-inline-block"><div class="blog-card-image-wrapper mg-bottom-32px width-100"><div class="card-wrapper width-100"><img src="https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e3e_thumbnail-2-blog-aptonic-template.png" alt="Aptonic is now available on iPadOS, try it now!" sizes="100vw" srcset="https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e3e_thumbnail-2-blog-aptonic-template-p-500.png 500w, https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e3e_thumbnail-2-blog-aptonic-template.png 800w" class="blog-card-image"></div></div><div class="blog-card-content"><div class="flex-horizontal start mg-bottom-24px"><h3 class="blog-card-title">Aptonic is now available on iPadOS, try it now!</h3></div><div class="mg-top-auto"><div class="flex-horizontal justify-space"><div class="text-200">Oct 26, 2022</div><div class="circle-arrow"><div class="line-square-icon"></div></div></div></div></div></a></div><div role="listitem" class="w-dyn-item"><a data-w-id="546346d7-0481-dd68-7abe-98e940dd939b" href="/blog/11-must-read-magazines-for-entrepreneurs" class="blog-card-wrapper w-inline-block"><div class="blog-card-image-wrapper mg-bottom-32px width-100"><div class="card-wrapper width-100"><img src="https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e3c_thumbnail-3-blog-aptonic-template.png" alt="11 must-read magazines for entrepreneurs" sizes="100vw" srcset="https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e3c_thumbnail-3-blog-aptonic-template-p-500.png 500w, https://cdn.prod.website-files.com/673ca327f6786e36dba98c53/673ca327f6786e36dba98e3c_thumbnail-3-blog-aptonic-template.png 800w" class="blog-card-image"></div></div><div class="blog-card-content"><div class="flex-horizontal start mg-bottom-24px"><h3 class="blog-card-title">11 must-read magazines for entrepreneurs</h3></div><div class="mg-top-auto"><div class="flex-horizontal justify-space"><div class="text-200">Oct 26, 2022</div><div class="circle-arrow"><div class="line-square-icon"></div></div></div></div></div></a></div></div></div></div></div></div>
+<div class="section-hide"><div class="container-default w-container"><footer data-w-id="537b92a7-d74b-de31-768c-e380f8466c37" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="footer-wrapper"><div class="w-layout-grid grid-footer---main"><div id="w-node-_537b92a7-d74b-de31-768c-e380f8466c39-dba98d03" class="card-footer-left"><div class="card-content card-footer-content"><div class="inner-container _350px---tablet"><h2 class="heading-h3-size mg-bottom-21px">Download the app on the App Store or <span class="text-no-wrap">Play Store</span></h2></div><div class="buttons-row center gap-25px display-flex---align-stretch"><div><a href="https://www.apple.com/" target="_blank" class="btn-primary download-app white hover-color-neutral-700 w-inline-block"><div class="social-icon-font button-left"></div><div>Download for iOS</div></a></div><div><a href="https://play.google.com/" target="_blank" class="btn-primary download-app white hover-color-neutral-700 w-inline-block"><div class="social-icon-font mg-right-8px"></div><div>Download for Android</div></a></div></div></div><div class="image-wrapper card-footer-image"><img loading="eager" src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98d8a_mockup-footer-aptonic-template.png" alt="Coming Soon - Aptonic X Webflow Template" class="image fit-cover"></div></div><div id="w-node-_537b92a7-d74b-de31-768c-e380f8466c4f-dba98d03" class="inner-container _650px width-100 _100---tablet"><div><a href="/old-home" class="footer-logo-wrapper w-inline-block"><img alt="Logo - Aptonic X Webflow Template" src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98c86_Logo.svg" class="footer-logo"></a></div><div class="footer-info"><p class="color-neutral-400 max-w-358px mg-bottom-0">Copyright © Aptonic X | Designed by <a href="https://brixtemplates.com/" target="_blank" class="link-footer">BRIX Templates</a> - Powered by <a href="https://webflow.com/" target="_blank" class="link-footer">Webflow</a> </p><div class="icon-social size-22px color-neutral-100"><div class="w-layout-grid style---line-icons-grid flex-horizontal"><a href="https://www.facebook.com/" target="_blank" class="link-social w-inline-block"><div class="social-icon-font"></div></a><a href="https://twitter.com/" target="_blank" class="link-social w-inline-block"><div class="social-icon-font"></div></a><a href="https://www.instagram.com/" target="_blank" class="link-social w-inline-block"><div class="social-icon-font"></div></a><a href="https://www.linkedin.com/" target="_blank" class="link-social w-inline-block"><div class="social-icon-font"></div></a><a href="https://www.youtube.com/" target="_blank" class="link-social w-inline-block"><div class="social-icon-font"></div></a></div></div></div><div class="divider _70px"></div><div class="footer-middle"><div class="menu-wrapper---main"><div class="menu-wrapper"><div class="mg-bottom-32px"><div class="text-400 bold color-neutral-100">Pages</div></div><div class="nav-content"><ul role="list" class="nav-menu-list-wrapper"><li class="nav-menu-list-item"><a href="/" aria-current="page" class="nav-link w--current">Home</a></li><li class="nav-menu-list-item"><a href="/about" class="nav-link">About</a></li><li class="nav-menu-list-item"><a href="/contact" class="nav-link">Contact</a></li><li class="nav-menu-list-item"><a href="#" class="nav-link">Blog</a></li><li class="nav-menu-list-item"><a href="https://aptonictemplate.webflow.io/blog/6-great-productivity-apps-you-can-download-for-free" class="nav-link link w-inline-block"><div>Blog post</div><div class="cms-nav-badge">CMS</div></a></li><li class="nav-menu-list-item"><a href="/pricing" class="nav-link">Pricing</a></li><li class="nav-menu-list-item"><a href="https://aptonictemplate.webflow.io/product/basic" class="nav-link link w-inline-block"><div>Pricing single</div><div class="cms-nav-badge">CMS</div></a></li></ul><ul role="list" class="nav-menu-list-wrapper last"><li class="nav-menu-list-item"><a href="/features" class="nav-link">Features</a></li><li class="nav-menu-list-item"><a href="/careers" class="nav-link">Careers</a></li><li class="nav-menu-list-item"><a href="https://aptonictemplate.webflow.io/career/web-designer" class="nav-link link w-inline-block"><div>Careers single</div><div class="cms-nav-badge">CMS</div></a></li><li class="nav-menu-list-item"><a href="/utility-pages/coming-soon" class="nav-link">Coming soon</a></li><li class="nav-menu-list-item"><a href="/login" class="nav-link">Login</a></li><li class="nav-menu-list-item"><a href="/utility-pages/sign-up" class="nav-link">Sign up</a></li></ul></div></div><div id="w-node-_537b92a7-d74b-de31-768c-e380f8466ca7-dba98d03" class="menu-wrapper last"><div class="mg-bottom-32px"><div class="text-400 bold color-neutral-100">Utility Pages</div></div><ul role="list" class="nav-menu-list-wrapper last"><li class="nav-menu-list-item"><a href="/template-pages/start-here" class="nav-link">Start Here</a></li><li class="nav-menu-list-item"><a href="/template-pages/style-guide" class="nav-link">Style Guide</a></li><li class="nav-menu-list-item"><a href="https://aptonictemplate.webflow.io/401" class="nav-link">Password Protected</a></li><li class="nav-menu-list-item"><a href="https://aptonictemplate.webflow.io/404" class="nav-link">404 Not Found</a></li><li class="nav-menu-list-item"><a href="/template-pages/licenses" class="nav-link">Licenses</a></li><li class="nav-menu-list-item"><a href="/template-pages/changelog" class="nav-link">Changelog</a></li><li class="nav-menu-list-item"><a href="https://brixtemplates.com/more-webflow-templates" target="_blank" class="nav-link featured">Browse <br>all templates</a></li></ul></div></div></div></div></div></footer></div></div>
+
+<div class="section hide"><div class="container-default w-container"><div class="inner-container _700px---tablet center"><div data-w-id="17b1708a-26e6-434a-da5c-8405901f063c" style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 1; transform-style: preserve-3d;" class="inner-container _676px"><div class="inner-container _500px---tablet center"><div class="inner-container _400px---mbl center"><div class="inner-container _320px---mbp center"><div class="mg-bottom-40px"><h2 class="display2 title">Take a look at our big set <span class="text-no-wrap">of features</span></h2></div></div></div></div></div><div class="display-flex vertical-gap-35px"><div data-w-id="17b1708a-26e6-434a-da5c-8405901f0645" style="opacity: 1;" class="card features"><div id="w-node-_17b1708a-26e6-434a-da5c-8405901f0648-dba98d03" class="pd---content-inside-card features-content-left"><img src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc4_Icon%20Card%20Features.png" alt="Built-in Digital Wallet - Aptonic X Webflow Template" class="icon-card-features mg-bottom-22px"><h3 class="display2 max-w-400px mg-bottom-16px">Client Boardroom</h3><div class="mg-top-16px"><p class="paragraph mg-bottom-32px">Centralises communication between solicitors, accountants and real estate agents. Drag, drop and e-sign important documents in one place. </p></div><a href="/pricing" class="btn-primary white w-button">Get started</a></div><div class="image-wrapper-features image-cards-right"><img sizes="100vw" srcset="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc3_iPhone-p-500.png 500w, https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc3_iPhone.png 961w" src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc3_iPhone.png" alt="Built-in Digital Wallet - Aptonic X Webflow Template" class="image image-iphone-left"></div></div><div class="w-layout-grid grid-2-columns gap-column-80px"><div id="w-node-_3ce8bfac-1851-d425-6784-d8a5c0ee8909-dba98d03" data-w-id="3ce8bfac-1851-d425-6784-d8a5c0ee8909" style="opacity: 1;" class="text-center pd-31px---mg-top-47px"><div class="image-wrapper overflow-hidden border-radius-0px display-flex"><img src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98d60_Transfer.png" alt="Send &amp; Receive Payments - Aptonic X Webflow Template" sizes="100vw" srcset="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98d60_Transfer-p-500.png 500w, https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98d60_Transfer.png 1107w"></div><div class="text-left"><div class="flex-horizontal gap-24px justify-left"><img src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc5_Icon%20Send%20%26%20Receive.svg" alt="Send &amp; Receive Payments - Aptonic X Webflow Template" class="icon"><h1 class="display-3 mg-bottom-0px">DocuSign integration for <br>e-sign.</h1></div></div></div><div id="w-node-a2c8f753-ec84-2064-1ca6-974d8c273166-dba98d03" data-w-id="a2c8f753-ec84-2064-1ca6-974d8c273166" style="opacity: 1;" class="text-center pd-31px---mg-top-47px"><div class="image-wrapper overflow-hidden border-radius-0px display-flex"><img src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc8_Image%20Monthly%20%26%20weekly%20reports.png" alt="Monthly &amp; Weekly Reports - Aptonic X Webflow Template" sizes="100vw" srcset="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc8_Image%2520Monthly%2520%2526%2520weekly%2520reports-p-500.png 500w, https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98cc8_Image%20Monthly%20%26%20weekly%20reports.png 1112w" class="image"></div><div class="text-left"><div class="flex-horizontal gap-24px justify-left"><img src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98ccb_Icon%20Monthly%20%26%20weekly.png" alt="Monthly &amp; Weekly Reports - Aptonic X Webflow Template" class="icon"><h1 class="display-3 mg-bottom-0px">Monthly &amp; weekly reports</h1></div></div></div></div><div data-w-id="2aaa0c16-6d14-2d5e-01d6-e9d5116c1ad5" style="opacity: 1;" class="card features direction-reverse"><div class="image-wrapper-features image-cards-left"><img sizes="100vw" srcset="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98ccc_Cards-p-500.png 500w, https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98ccc_Cards-p-800.png 800w, https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98ccc_Cards.png 1393w" src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98ccc_Cards.png" alt="Virtual Credit Cards - Aptonic X Webflow Template" class="image image-cards-left"></div><div id="w-node-_2aaa0c16-6d14-2d5e-01d6-e9d5116c1ad6-dba98d03" class="pd---content-inside-card features-content-left"><img src="https://cdn.prod.website-files.com/673ca326f6786e36dba98bd8/673ca327f6786e36dba98ccd_Virtual%20Credit%20Cards.svg" alt="Virtual Credit Cards - Aptonic X Webflow Template" class="icon-card-features mg-bottom-22px"><h3 class="display2 max-w-361px mg-bottom-16px">Virtual <span class="text-no-wrap">credit cards</span></h3><div class="mg-top-16px"><p class="paragraph mg-bottom-32px">Lectus eleifend eget ipsum accumsan arcu nisl nec mi fermentum sed hendrerit non orci luctus aenean sed et vitae sed quam senectus vitae <span class="text-no-wrap">ac ut urna.</span></p></div><a href="/pricing" class="btn-primary white w-button">Get started</a></div></div><div data-w-id="6d0e35f2-9585-1bf2-416e-d22255c91a15" style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 1; transform-style: preserve-3d;" class="buttons-row center gap-25px mg-top-24px"><div><a href="https://www.apple.com/" target="_blank" class="btn-primary download-app white w-inline-block"><div class="social-icon-font button-left"></div><div>Download for iOS</div></a></div><div><a href="https://play.google.com/" target="_blank" class="btn-primary download-app white w-inline-block"><div class="social-icon-font mg-right-8px"></div><div>Download for Android</div></a></div></div></div></div></div></div>

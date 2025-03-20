@@ -1,0 +1,13 @@
+.boundary-login {
+    background-color: var(--button-shadow--color-01);
+    border: 3px solid #eff3f3;
+    border-radius: 34px;
+    padding: 35px;
+}
+input::placeholder {
+    color: #bcbcbc; /* Change to your desired color */
+    opacity: 1; /* Ensures the color is fully applied */
+}
+.input-copy:hover {
+    border-color: #bcbcbc !important;
+}
