@@ -4,6 +4,15 @@
     font-size: 102px;
     font-weight: 800;
     line-height: .99em;
+    font-family: Clarity City, sans-serif;
+}
+p{
+    font-family: Clarity City, sans-serif;
+    color: #dadada !important;
+}
+.textwhite{
+    color: #dadada !important;
+
 }
 .inner-container1 {
     max-width: 1080px !important;
@@ -31,6 +40,7 @@
     font-weight: 700;
     line-height: 1.167em;
     color: whitesmoke;
+    font-family: Clarity City, sans-serif;
 }
 .heading-h3-size {
     font-size: 24px;
@@ -61,9 +71,10 @@
 }
 .h2-quote {
     margin-bottom: 0;
-    font-size: 94px;
+    font-size: 90px;
     font-weight: 700;
     line-height: .99em;
+    font-family: Clarity City, sans-serif;
 }
 .submitbtn
 {
@@ -81,4 +92,12 @@
 .bg-info1
 {
     color: #3fd6d4 !important;
+}
+.subtitle {
+    font-weight: 600;
+    font-size: 18px;
+}
+.btn-primary
+{
+    font-family: Clarity City, sans-serif;
 }

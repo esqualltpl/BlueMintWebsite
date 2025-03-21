@@ -1,5 +1,5 @@
 .boundary-login {
-    background-color: var(--button-shadow--color-01);
+    background-color: #242446;
     border: 3px solid #eff3f3;
     border-radius: 34px;
     padding: 35px;
@@ -10,4 +10,19 @@ input::placeholder {
 }
 .input-copy:hover {
     border-color: #bcbcbc !important;
+}
+.w-input:focus, .w-select:focus {
+    border-color: #bcbcbc !important;
+    outline: 0;
+}
+
+.input-copy.new:focus {
+    border-color: #bcbcbc !important;
+}
+.input-copy:focus {
+    border-color: #bcbcbc !important;
+    color:#bcbcbc !important;
+}
+.btnpading {
+    padding: 35px;
 }
