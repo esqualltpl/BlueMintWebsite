@@ -1,0 +1,22 @@
+.Section-feautres{
+    margin-top: 25px;
+}
+.heading-1{
+    color:white;
+    font-size: x-large;
+    padding: 2px;
+}
+.spacing{
+    margin-top: 8px;
+}
+.icon-space{
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+.avoid-margin{
+    padding-left: 0px !important;
+}
+.img-margin{
+    margin-top: 30px;
+    margin-right: 0px !important;
+}
