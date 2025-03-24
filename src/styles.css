@@ -6,17 +6,20 @@
     line-height: .99em;
     font-family: Clarity City, sans-serif;
 }
-p{
+
+p {
     font-family: Clarity City, sans-serif;
     color: #dadada !important;
 }
-.textwhite{
-    color: #dadada !important;
 
+.textwhite {
+    color: #dadada !important;
 }
+
 .inner-container1 {
     max-width: 1080px !important;
 }
+
 .paragraph-large.mg-bottom-40px.max-w-812px {
     max-width: 812px;
     margin-left: auto;
@@ -27,13 +30,16 @@ p{
     font-size: 22px;
     line-height: 1.727em;
 }
+
 .mg-bottom-40px {
     margin-bottom: 40px;
 }
+
 .btn-primary {
-    background-color:#3fd6d4 !important;
+    background-color: #3fd6d4 !important;
     border-color: #3fd6d4 !important;
 }
+
 .display2 {
     margin-top: 0;
     font-size: 60px;
@@ -42,14 +48,21 @@ p{
     color: whitesmoke;
     font-family: Clarity City, sans-serif;
 }
+
 .heading-h3-size {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.417em;
+    font-family: Clarity City, sans-serif;
+    color: white !important;
 }
+
 .color-neutral-400 {
     color: #bcbcbc;
+    font-family: Clarity City, sans-serif;
+    font-size: 18px;
 }
+
 .border-radius-64px {
     clear: none;
     background-color: #6bfffd;
@@ -69,6 +82,7 @@ p{
     top: 0;
     left: -1px;
 }
+
 .h2-quote {
     margin-bottom: 0;
     font-size: 90px;
@@ -76,28 +90,29 @@ p{
     line-height: .99em;
     font-family: Clarity City, sans-serif;
 }
-.submitbtn
-{
+
+.submitbtn {
     background-color: #242446 !important;
 }
-.submitbtn:hover
-{
+
+.submitbtn:hover {
     background-color: #3fd6d4 !important;
 
 }
-.text-info1
-{
+
+.text-info1 {
     color: #3fd6d4 !important;
 }
-.bg-info1
-{
+
+.bg-info1 {
     color: #3fd6d4 !important;
 }
+
 .subtitle {
     font-weight: 600;
     font-size: 18px;
 }
-.btn-primary
-{
+
+.btn-primary {
     font-family: Clarity City, sans-serif;
 }

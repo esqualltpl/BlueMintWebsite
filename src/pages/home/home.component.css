@@ -20,3 +20,38 @@
     margin-top: 30px;
     margin-right: 0px !important;
 }
+.max-w-416px
+{
+    max-width: 416px;
+}
+.icon-list {
+    margin-right: 16px;
+}
+.gap-row-48px {
+    grid-row-gap: 48px;
+}
+.mg-bottom-32px {
+    margin-bottom: 32px;
+}
+.btndownload-app {
+    text-align: left;
+    align-items: center;
+    padding: 20px 32px;
+    font-size: 16px;
+    display: flex;
+    line-height: 1.111em;
+}
+.tabs-link {
+    font-family: Clarity City, sans-serif;
+}
+.tabs-link.active {
+    background-color: #3fd6d4;
+}
+.paragraph {
+    font-size: 18px;
+}
+.subtitlefont {
+    font-size: 18px;
+    font-family: Clarity City, sans-serif;
+    color: white;
+}

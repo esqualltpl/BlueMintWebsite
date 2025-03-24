@@ -4,12 +4,27 @@
             <div class="boundary-login my-5">
                 <div class="card card bg-transparent border-0">
                     <div class="card-body text-center">
-                        <img src="Images/icon5.svg" />
+                        <img src="Images/iconlogo.png" />
 
                         <h2 class="display2 my-4">Create Account</h2>
-                        <div class="co-12">
+                        <p class="color-neutral-400">Are you an adviser or customer?</p>
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="type" id="flexRadioDefault1" [(ngModel)]="selectedType" value="Adviser">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Adviser
+                                </label>
+                            </div>
+                            <div class="form-check ms-3">
+                                <input class="form-check-input" type="radio" name="type" id="flexRadioDefault2" [(ngModel)]="selectedType" value="Customer">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Customer
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3" *ngIf="selectedType === 'Adviser'">
                             <input maxlength="256" name="Name-4" data-name="Name 4" placeholder="Enter business Name"
-                                type="text" id="Name-4" required=""
+                                type="text" id="Name-4" required
                                 class="bg-transparent input-copy new w-input color-neutral-400">
                         </div>
                         <div class="co-12 mt-3">
@@ -18,7 +33,7 @@
                                 class="bg-transparent input-copy new w-input color-neutral-400">
                         </div>
                         <div class="co-12 mt-3">
-                            <input maxlength="256" name="Name-4" data-name="Name 4" placeholder="Enter second name"
+                            <input maxlength="256" name="Name-4" data-name="Name 4" placeholder="Enter last name"
                                 type="text" id="Name-4" required=""
                                 class="bg-transparent input-copy new w-input color-neutral-400">
                         </div>
@@ -33,15 +48,14 @@
                                 class="bg-transparent input-copy new w-input color-neutral-400">
                             <div class="d-flex">
                             </div>
-                         
+
                             <div class="col-12 mt-3 text-left">
-                                <label><input type="checkbox" /> I had read and accept bluemint
-                                    Limited’s Terms & Conditions and Privacy Policy.</label>
+                                <label><input type="checkbox" class="me-3" />I agree to bluemint co Technologies Terms &
+                                    Conditions.</label>
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="submit" data-wait="Submit"
-                                    id="w-node-_50bc31af-7d59-5575-bbb5-674de4c6adc6-dba98d03"
-                                    value="Create Account"
+                                    id="w-node-_50bc31af-7d59-5575-bbb5-674de4c6adc6-dba98d03" value="Create Account"
                                     class="btn-primary text-dark w-button bg-info1 w-100 btnpading">
                             </div>
                             <div class="col-12 mt-3">
@@ -62,8 +76,8 @@
                                     facebook</button>
                             </div>
                             <div class="col-12 mt-3">
-                                <p class="textwhite">Already have an account? <a href="/login"
-                                        class="text-info1"><u>Log in.</u></a></p>
+                                <p class="textwhite">Already have an account? <a href="/login" class="text-info1"><u>Log
+                                            in.</u></a></p>
                             </div>
 
                         </div>

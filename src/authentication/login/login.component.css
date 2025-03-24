@@ -26,3 +26,28 @@ input::placeholder {
 .btnpading {
     padding: 35px;
 }
+.or-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid gray;
+}
+
+.or-divider:not(:empty)::before {
+    margin-right: 10px;
+}
+
+.or-divider:not(:empty)::after {
+    margin-left: 10px;
+}
+
+.or-text {
+    font-weight: bold;
+    color: #f2efef; /* Adjust color as needed */
+}
