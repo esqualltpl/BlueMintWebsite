@@ -4,15 +4,17 @@
             <div class="boundary-login my-5">
                 <div class="card card bg-transparent border-0">
                     <div class="card-body text-center">
+                        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
                         <img src="Images/iconlogo.png" />
 
                         <h2 class="display2 ">Welcome back</h2>
                         <p class="color-neutral-400">Please enter your email and password to sign in.</p>
-                        <div class="co-12"><input maxlength="256" name="Name-4" data-name="Name 4"
+                        <div class="co-12"><input maxlength="256" formControlName="email" name="Name-4" data-name="Name 4"
                                 placeholder="Enter your email" type="text" id="Name-4" required=""
                                 class="bg-transparent input-copy new w-input color-neutral-400"></div>
                         <div class="co-12 mt-3">
-                            <input maxlength="256" name="Name-4" data-name="Name 4" placeholder="Enter your password"
+                            <input maxlength="256" name="Name-4" data-name="Name 4" formControlName="password" placeholder="Enter your password"
                                 type="password" id="Name-4" required=""
                                 class="bg-transparent input-copy new w-input color-neutral-400">
                             <div class="d-flex">
@@ -24,6 +26,8 @@
                                             password?</u></a>
                                 </div>
                             </div>
+                            <div *ngIf="isError" class="alert alert-danger">{{ errorMessage }}</div>
+
                             <div class="co-12 mt-3">
                                 <input type="submit" data-wait="Submit"
                                     id="w-node-_50bc31af-7d59-5575-bbb5-674de4c6adc6-dba98d03" value="Sign In"
@@ -51,6 +55,7 @@
 
 
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
