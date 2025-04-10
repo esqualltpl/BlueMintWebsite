@@ -6,6 +6,7 @@ export interface BaseResponse {
   errorMessage: string;
   message:string;
   data: any;
+  twoFactorEnabled:boolean;
   success:boolean;
   status: string;
   token:string;

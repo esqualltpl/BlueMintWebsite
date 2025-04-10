@@ -20,8 +20,10 @@ import { environment } from "../../environments/environment.prod";
 })
 export class SignupComponent {
   isNightMode = false;
+  isSubmit=false;
+
   isValid = true;
-  urlredirect=environment.apiUrl
+  urlredirect=environment.redirectUrl
   isSuccess: boolean = false;
   isError: boolean = false;
   successMessage: string="";
@@ -53,7 +55,7 @@ export class SignupComponent {
       this.signupForm.markAllAsTouched();
       return;
     }
-
+    this.isSubmit=true;
     this.loader.show();
     this.httpService.post<ApiResponse<any>>(this.commonService.apiEndPoints.Register, this.signupForm.value)
       .subscribe(
@@ -67,7 +69,9 @@ export class SignupComponent {
 
             setTimeout(() => {
               window.location.href =this.urlredirect+ '/Account/RegisterConfirmation/' + response.data;
-            }, 2000);
+              this.isSubmit=false;
+
+            },500);
           } else {
             this.isError = true;
             this.isSuccess = false;

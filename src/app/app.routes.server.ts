@@ -6,3 +6,13 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender
   }
 ];
+// server-prerender.ts or app.server.ts
+
+export function getPrerenderParams() {
+  return [
+    { email: 'user1@example.com' },
+    { email: 'user2@example.com' },
+    { email: 'user3@example.com' },
+    // Add more dynamic emails or fetch them from an API or database
+  ];
+}

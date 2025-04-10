@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from '../../shared/services/http-service';
 import { CommonService } from '../../shared/services/common-service';
 import { ApiResponse } from '../../shared/interfaces/response';
@@ -10,33 +10,39 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from "../../environments/environment.prod";
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-twofactorauthentication',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule], 
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './twofactorauthentication.component.html',
+  styleUrl: './twofactorauthentication.component.css'
 })
-export class LoginComponent {
+export class TwofactorauthenticationComponent {
   isSuccess = false;
   isSubmit = false;
+  email!: string;
 
   isError = false;
   errorMessage = "";
   urlredirect=environment.redirectUrl
   successMessage: string="";
 
-  loginForm: FormGroup;
-
+  loginForm!: FormGroup;
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private loader: NgxSpinnerService,
     private httpService: HttpService,
+    private route: ActivatedRoute,
     public commonService: CommonService
   ) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+    this.route.paramMap.subscribe(params => {
+      this.email = params.get('email') || '';
+      console.log('Email:', this.email);
+  
+      this.loginForm = this.fb.group({
+        code: ['', [Validators.required, Validators.minLength(6)]],
+        email: [this.email]
+      });
     });
   }
 
@@ -49,18 +55,12 @@ export class LoginComponent {
     //window.open(this.urlredirect + '/Account/Login/', '_blank');
     this.isSubmit=true;
 
-    this.httpService.post<ApiResponse<any>>(this.commonService.apiEndPoints.Login, this.loginForm.value)
+    this.httpService.post<ApiResponse<any>>(this.commonService.apiEndPoints.Twofactor, this.loginForm.value)
       .subscribe(
         (response) => {
           console.log(response)
           this.loader.hide();
           if (response.token!=null && response.token != '' ) {
-
-            if(response.twoFactorEnabled==true)
-            {
-              this.router.navigate(['/twofactorauthentication', this.loginForm.value.email]);
-             return;
-            }
             this.isSuccess = true;
             this.isError = false;
             //localStorage.setItem('userToken', response.data.token);
@@ -71,14 +71,13 @@ export class LoginComponent {
           } else {
             this.isError = true;
             this.isSubmit=false;
-            this.errorMessage = "Invalid email or password.";
+            this.errorMessage = "Invalid Information.";
           }
         },
         (error) => {
           this.loader.hide();
           this.isError = true;
           this.isSubmit=false;
-
           this.errorMessage = "An error occurred. Please try again.";
         }
       );

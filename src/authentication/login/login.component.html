@@ -28,11 +28,16 @@
                             </div>
                             <div *ngIf="isError" class="alert alert-danger">{{ errorMessage }}</div>
 
-                            <div class="co-12 mt-3">
-                                <input type="submit" data-wait="Submit"
-                                    id="w-node-_50bc31af-7d59-5575-bbb5-674de4c6adc6-dba98d03" value="Sign In"
-                                    class="btn-primary text-dark w-button bg-info1 w-100 btnpading">
+                            <div *ngIf="isSubmit" class="co-12 mt-3">
+                                
+                                    <button type="button" disabled class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        Sign In</button>
                             </div>
+                            <div *ngIf="!isSubmit" class="co-12 mt-3">
+                                <button type="submit" class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                                    Sign In</button>
+                           </div>
                             <div class="col-12 mt-3">
                                 <div class="or-divider">
                                     <span class="or-text">OR</span>

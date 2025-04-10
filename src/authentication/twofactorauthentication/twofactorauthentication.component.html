@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-9">
+            <div class="boundary-login my-5">
+                <div class="card card bg-transparent border-0">
+                    <div class="card-body text-center">
+                        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                        <img src="Images/iconlogo.png" />
+
+                        <h2 class="display2 ">Welcome back</h2>
+                        <p class="color-neutral-400">Your login is protected with an authenticator app. Enter your authenticator code below.</p>
+                        <div class="co-12"><input maxlength="256" formControlName="code" name="Name-4" data-name="Name 4"
+                                placeholder="Enter code" type="text" id="Name-4" required=""
+                                class="bg-transparent input-copy new w-input color-neutral-400"></div>
+                        <div class="co-12 mt-3">
+                            <div class="d-flex">
+                            </div>
+                            
+                            <div *ngIf="isError" class="alert alert-danger">{{ errorMessage }}</div>
+
+                            <div *ngIf="isSubmit" class="co-12 mt-3">
+                                
+                                    <button type="button" disabled class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        Confirm</button>
+                            </div>
+                            <div *ngIf="!isSubmit" class="co-12 mt-3">
+                                <button type="submit" class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                                    Confirm</button>
+                           </div>
+                            
+
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

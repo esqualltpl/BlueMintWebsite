@@ -1,6 +1,6 @@
 
   export const environment = {
     production: false,
-    baseUrl: 'https://localhost:7112',
-    redirectUrl: 'https://localhost:44317',
+    baseUrl: 'http://api.bluemint.tech',
+    redirectUrl: 'http://app.bluemint.tech',
 };

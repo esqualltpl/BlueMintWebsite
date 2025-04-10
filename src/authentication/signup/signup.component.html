@@ -78,10 +78,16 @@
                             There was an error creating the account. Please try again.
                           </div>
                             <!-- Submit Button -->
-                            <div class="col-12 mt-3">
-                              <input type="submit" value="Create Account"
-                                     class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
-                            </div>
+                            <div *ngIf="isSubmit" class="co-12 mt-3">
+                                
+                              <button type="button" disabled class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                  Sign In</button>
+                      </div>
+                      <div *ngIf="!isSubmit" class="co-12 mt-3">
+                          <button type="submit" class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                              Sign In</button>
+                     </div>
                           
                             <!-- Alternative Sign in options -->
                             <div class="col-12 mt-3">
