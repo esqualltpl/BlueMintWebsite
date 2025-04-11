@@ -4,7 +4,6 @@ import { LoginComponent } from '../authentication/login/login.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { SignupComponent } from '../authentication/signup/signup.component';
 import { TwofactorauthenticationComponent } from '../authentication/twofactorauthentication/twofactorauthentication.component';
-import { getPrerenderParams } from './app.routes.server';
 
 export const routes: Routes = [
   {
