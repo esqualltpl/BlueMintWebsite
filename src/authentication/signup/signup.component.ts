@@ -57,6 +57,7 @@ export class SignupComponent {
     }
     this.isSubmit=true;
     this.loader.show();
+    return;
     this.httpService.post<ApiResponse<any>>(this.commonService.apiEndPoints.Register, this.signupForm.value)
       .subscribe(
         (response) => {

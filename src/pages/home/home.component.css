@@ -57,3 +57,21 @@
 }
 
 
+
+  
+  
+  
+  .scroll-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .scroll-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  
+ 

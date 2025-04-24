@@ -7,9 +7,8 @@
                         <form [formGroup]="signupForm" (ngSubmit)="signup()">
                             <img src="Images/iconlogo.png" />
                             <h2 class="display2 my-4">Create Account</h2>
-                            <p class="color-neutral-400">Are you an adviser or customer?</p>
+                            <!-- <p class="color-neutral-400">Are you an adviser or customer?</p>
                             
-                            <!-- Radio buttons for Role -->
                             <div class="col-12 d-flex justify-content-center">
                               <div class="form-check">
                                 <input class="form-check-input" type="radio" id="flexRadioDefault1" formControlName="Role" value="Financial Advisor">
@@ -19,7 +18,7 @@
                                 <input class="form-check-input" type="radio" id="flexRadioDefault2" formControlName="Role" value="Client">
                                 <label class="form-check-label" for="flexRadioDefault2">Customer</label>
                               </div>
-                            </div>
+                            </div> -->
                           
                             <!-- Business Name Input (only if Financial Adviser selected) -->
                             <div class="col-12 mt-3" *ngIf="signupForm.get('Role')?.value === 'Financial Advisor'">
