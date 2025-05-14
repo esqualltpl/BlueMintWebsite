@@ -20,33 +20,7 @@
                               </div>
                             </div> -->
                           
-                            <!-- Business Name Input (only if Financial Adviser selected) -->
-                            <div class="col-12 mt-3" *ngIf="signupForm.get('Role')?.value === 'Financial Advisor'">
-                              <input maxlength="256" formControlName="BusinessName" data-name="Name 4" placeholder="Enter business Name"
-                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
-                              <div *ngIf="signupForm.get('BusinessName')?.invalid && signupForm.get('BusinessName')?.touched" class="text-danger">
-                                Business name is required.
-                              </div>
-                            </div>
-                          
-                            <!-- First Name Input -->
-                            <div class="col-12 mt-3">
-                              <input maxlength="256" formControlName="FirstName" data-name="Name 4" placeholder="Enter first name"
-                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
-                              <div *ngIf="signupForm.get('FirstName')?.invalid && signupForm.get('FirstName')?.touched" class="text-danger">
-                                First name is required.
-                              </div>
-                            </div>
-                          
-                            <!-- Last Name Input -->
-                            <div class="col-12 mt-3">
-                              <input maxlength="256" formControlName="LastName" data-name="Name 4" placeholder="Enter last name"
-                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
-                              <div *ngIf="signupForm.get('LastName')?.invalid && signupForm.get('LastName')?.touched" class="text-danger">
-                                Last name is required.
-                              </div>
-                            </div>
-                          
+                        
                             <!-- Email Input -->
                             <div class="col-12 mt-3">
                               <input maxlength="256" formControlName="email" data-name="Name 4" placeholder="Enter your email"

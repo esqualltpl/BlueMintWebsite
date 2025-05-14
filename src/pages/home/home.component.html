@@ -269,6 +269,15 @@
                           <img src="Images/icon5.svg" />
                         </div>
                         <div class="max-w-416px">
+                          <h1 class="heading-h3-size mg-bottom-4px textwhite">Scalable Growth</h1>
+                          <div class="paragraph color-neutral-400">Streamline customer managemenet by digitally centralising their data, documents and communications.</div>
+                        </div>
+                      </div>  
+                      <div class="d-flex align-items-center text-left mg-bottom-32px">
+                        <div class="icon-list">
+                          <img src="Images/icon5.svg" />
+                        </div>
+                        <div class="max-w-416px">
                           <h1 class="heading-h3-size mg-bottom-4px textwhite">Renewals & refixes</h1>
                           <div class="paragraph color-neutral-400">Automated review process enables you to assist customers in making timely, informed decisions.</div>
                         </div>
@@ -284,15 +293,7 @@
                         </div>
                       </div>  
 
-                      <div class="d-flex align-items-center text-left mg-bottom-32px">
-                        <div class="icon-list">
-                          <img src="Images/icon5.svg" />
-                        </div>
-                        <div class="max-w-416px">
-                          <h1 class="heading-h3-size mg-bottom-4px textwhite">Faster approvals </h1>
-                          <div class="paragraph color-neutral-400">Simplifies the process of submitting applications, reducing errors and speeding up approvals.</div>
-                        </div>
-                      </div>  
+                      
 
                     </div>
                     <div class="col-12 col-lg-6">
@@ -442,26 +443,35 @@
           </div>
         </div>
         <div class="card form contact-form-v1 trans w-form">
+                                  <form [formGroup]="supportform" (ngSubmit)="support()">
+                   <div class="col-12 w-100"><div *ngIf="isError" class="alert alert-danger w-100">{{ errorMessage }}</div>
+          <div *ngIf="isSuccess" class="alert alert-success w-100">{{ successMessage }}</div>
+</div>
+         
           <div id="email-form" name="email-form" aria-label="Email Form">
             <div class="w-layout-grid grid-2-columns contact-form space">
               <div>
-                <input class="input-copy new w-input" maxlength="256" name="Name-4" data-name="Name 4"
+                <input class="input-copy new w-input" formControlName="fullname" maxlength="256" name="Name-4" data-name="Name 4"
                   placeholder="Full Name" type="text" id="Name-4" required="">
               </div>
               <div>
-                <input class="input-copy new w-input" maxlength="256" name="Company" data-name="Company"
+                <input class="input-copy new w-input" formControlName="company" maxlength="256" name="Company" data-name="Company"
                   placeholder="Company" type="text" id="Company">
               </div>
               <div>
-                <input class="input-copy new w-input" maxlength="256" name="Phone-4" data-name="Phone 4"
+                <input class="input-copy new w-input" formControlName="contactnumber" maxlength="256" name="Phone-4" data-name="Phone 4"
                   placeholder="Contact number" type="tel" id="Phone-4" required="">
               </div>
               <div>
-                <input class="input-copy new w-input" maxlength="256" name="Email-4" data-name="Email 4"
+                <input class="input-copy new w-input" formControlName="email" maxlength="256" name="Email-4" data-name="Email 4"
                   placeholder="Email" type="email" id="Email-4" required="">
               </div>
-              <input type="submit" data-wait="Submit" style="width: 50%;font-size: 17px;" class="btn-primary white white-text w-button submitbtn"
+         <div class="col-12">
+               <input type="submit" *ngIf="!isSubmit"  data-wait="Submit" style="width: 50%;font-size: 17px;" class="btn-primary white white-text w-button submitbtn"
                 value="Submit">
+                   <input type="submit" *ngIf="isSubmit" disabled data-wait="Submit" style="width: 50%;font-size: 17px;" class="btn-primary white white-text w-button submitbtn disabled"
+                value="Submit">
+             </div>
             </div>
             <div>
               <div>
@@ -481,6 +491,7 @@
               <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
+                                  </form>
         </div>
 
       </div>

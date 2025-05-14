@@ -7,6 +7,7 @@ import { TwofactorauthenticationComponent } from '../authentication/twofactoraut
 import { CookiepolicyComponent } from '../pages/footers/cookiepolicy/cookiepolicy.component';
 import { PrivacypolicyComponent } from '../pages/footers/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from '../pages/footers/termsofuse/termsofuse.component';
+import { CustomersignupComponent } from '../authentication/customersignup/customersignup.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,7 @@ export const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'twofactorauthentication/:email', component: TwofactorauthenticationComponent },
+     // { path: 'customersignup/:id', component: CustomersignupComponent },
       { path: 'cookiepolicy', component: CookiepolicyComponent },
       { path: 'privacypolicy', component: PrivacypolicyComponent },
       { path: 'termsofuse', component: TermsofuseComponent },

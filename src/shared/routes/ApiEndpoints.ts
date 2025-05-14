@@ -1,5 +1,8 @@
 export let ApiEndPoints = {
   Login: 'Authentication/login',
   Register: 'Authentication/register',
-  Twofactor: 'Authentication/VerifyToken'
+  Customerregister: 'Authentication/customerregister',
+  Getcustomer: 'Authentication/getcustomer',
+  Twofactor: 'Authentication/VerifyToken',
+  Support: 'Authentication/support',
 }
