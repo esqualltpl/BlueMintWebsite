@@ -8,6 +8,9 @@ import { CookiepolicyComponent } from '../pages/footers/cookiepolicy/cookiepolic
 import { PrivacypolicyComponent } from '../pages/footers/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from '../pages/footers/termsofuse/termsofuse.component';
 import { CustomersignupComponent } from '../authentication/customersignup/customersignup.component';
+import { ForgotpasswordComponent } from '../authentication/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from '../authentication/resetpassword/resetpassword.component';
+import { SignupinsuranceComponent } from '../authentication/signupinsurance/signupinsurance.component';
 
 export const routes: Routes = [
   {
@@ -18,8 +21,11 @@ export const routes: Routes = [
       { path: 'home', component: HomeComponent }, // ✅ Ensure 'home' is a valid route
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
+      { path: 'signupinsurance', component: SignupinsuranceComponent },
       { path: 'twofactorauthentication/:email', component: TwofactorauthenticationComponent },
-     // { path: 'customersignup/:id', component: CustomersignupComponent },
+      { path: 'resetpassword/:code', component: ResetpasswordComponent },
+      { path: 'forgotpassword', component: ForgotpasswordComponent },
+      { path: 'customersignup/:id', component: CustomersignupComponent },
       { path: 'cookiepolicy', component: CookiepolicyComponent },
       { path: 'privacypolicy', component: PrivacypolicyComponent },
       { path: 'termsofuse', component: TermsofuseComponent },

@@ -4,7 +4,7 @@
             <div class="boundary-login my-5">
                 <div class="card card bg-transparent border-0">
                     <div class="card-body text-center">
-                        <form [formGroup]="signupForm" (ngSubmit)="signup()" autocomplete="off">
+                        <form [formGroup]="signupForm" (ngSubmit)="signup()">
                             <img src="Images/iconlogo.png" />
                             <h2 class="display2 my-4">Create Account</h2>
                             <!-- <p class="color-neutral-400">Are you an adviser or customer?</p>
@@ -20,10 +20,36 @@
                               </div>
                             </div> -->
                           
-                        
+                            <!-- Business Name Input (only if Financial Adviser selected) -->
+                            <div class="col-12 mt-3" *ngIf="signupForm.get('Role')?.value === 'Financial Advisor'">
+                              <input maxlength="256" formControlName="BusinessName" data-name="Name 4" placeholder="Enter business Name"
+                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('BusinessName')?.invalid && signupForm.get('BusinessName')?.touched" class="text-danger">
+                                Business name is required.
+                              </div>
+                            </div>
+                          
+                            <!-- First Name Input -->
+                            <div class="col-12 mt-3">
+                              <input maxlength="256" formControlName="FirstName" data-name="Name 4" placeholder="Enter first name"
+                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('FirstName')?.invalid && signupForm.get('FirstName')?.touched" class="text-danger">
+                                First name is required.
+                              </div>
+                            </div>
+                          
+                            <!-- Last Name Input -->
+                            <div class="col-12 mt-3">
+                              <input maxlength="256" formControlName="LastName" data-name="Name 4" placeholder="Enter last name"
+                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('LastName')?.invalid && signupForm.get('LastName')?.touched" class="text-danger">
+                                Last name is required.
+                              </div>
+                            </div>
+                          
                             <!-- Email Input -->
                             <div class="col-12 mt-3">
-                              <input maxlength="256" autocomplete="off" formControlName="email" data-name="Name 4" placeholder="Enter your email"
+                              <input maxlength="256" formControlName="email" data-name="Name 4" placeholder="Enter your email"
                                      type="email" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
                               <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-danger">
                                 Please enter a valid email.
@@ -32,7 +58,7 @@
                           
                             <!-- Password Input -->
                             <div class="col-12 mt-3">
-                              <input maxlength="256"  autocomplete="off" formControlName="password" data-name="Name 4" placeholder="Enter your password"
+                              <input maxlength="256" formControlName="password" data-name="Name 4" placeholder="Enter your password"
                                      type="password" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
                               <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger">
                                 Password is required.

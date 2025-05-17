@@ -58,10 +58,11 @@ export class CustomersignupComponent {
   }
 getCustomerData(id: number) {
     this.loader.show();
-    const url = `${this.commonService.apiEndPoints.Getcustomer}/${id}`;
+    const url = `${this.commonService.apiEndPoints.Getcustomer}?id=${id}`;
     this.httpService.get<ApiResponse<any>>(url).subscribe(
       (response) => {
         this.loader.hide();
+        console.log(response);
         if (response.status === 'success' && response.data) {
           this.signupForm.patchValue({
             id: this.id,

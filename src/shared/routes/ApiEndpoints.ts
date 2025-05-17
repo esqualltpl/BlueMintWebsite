@@ -5,4 +5,6 @@ export let ApiEndPoints = {
   Getcustomer: 'Authentication/getcustomer',
   Twofactor: 'Authentication/VerifyToken',
   Support: 'Authentication/support',
+  Forgotpassword: 'Authentication/forgot-password',
+  Resetpassword: 'Authentication/resetpassword',
 }
