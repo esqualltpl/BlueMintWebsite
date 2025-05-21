@@ -45,6 +45,11 @@ export class LoginComponent {
       this.loginForm.markAllAsTouched();
       return;
     }
+      if (this.isMobileDevice()) {
+    this.isError = true;
+    this.errorMessage = "Login is only allowed from desktop devices.";
+    return;
+  }
     this.loader.show();
     //window.open(this.urlredirect + '/Account/Login/', '_blank');
     this.isSubmit=true;
@@ -83,4 +88,11 @@ export class LoginComponent {
         }
       );
   }
+  isMobileDevice(): boolean {
+  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+
+  // Check for mobile or tablet identifiers in user agent
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+}
+
 }

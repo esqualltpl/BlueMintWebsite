@@ -27,6 +27,7 @@ export class CustomersignupComponent {
   isSuccess: boolean = false;
   isError: boolean = false;
   successMessage: string="";
+  errorMessage:string="";
   signupForm: FormGroup = new FormGroup({
 
     id: new FormControl(''),
@@ -81,7 +82,11 @@ getCustomerData(id: number) {
   }
   signup() {
     console.log(this.signupForm.value);
-    
+      if (this.isMobileDevice()) {
+    this.isError = true;
+    this.errorMessage = "Login is only allowed from desktop devices.";
+    return;
+  }
     // Mark all controls as touched to trigger validation messages
     if (this.signupForm.invalid) {
       this.signupForm.markAllAsTouched();
@@ -117,4 +122,10 @@ getCustomerData(id: number) {
         }
       );
   }
+  isMobileDevice(): boolean {
+  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+
+  // Check for mobile or tablet identifiers in user agent
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+}
 }
