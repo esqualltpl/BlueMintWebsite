@@ -13,6 +13,10 @@ export const serverRoutes: ServerRoute[] = [
     path: 'customersignup/:id',
     renderMode: RenderMode.Server // or RenderMode.Client
   },
+   {
+    path: 'staffsignup/:id',
+    renderMode: RenderMode.Server // or RenderMode.Client
+  },
   
   {
     path: '**',

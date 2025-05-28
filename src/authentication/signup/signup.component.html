@@ -70,11 +70,12 @@
                               <label><input type="checkbox" class="me-3" />I agree to bluemint co Technologies Terms & Conditions.</label>
                             </div>
                            <!-- Success or Error Messages -->
-                           <div *ngIf="isSuccess" class="alert alert-success mt-3">
-                            Account created successfully! Redirecting...
+                         <div *ngIf="isSuccess" class="alert alert-success mt-3">
+                                                       {{ successMessage }}
+
                           </div>
                           <div *ngIf="isError" class="alert alert-danger mt-3">
-                            There was an error creating the account. Please try again.
+                            {{ errorMessage }}
                           </div>
                             <!-- Submit Button -->
                             <div *ngIf="isSubmit" class="co-12 mt-3">

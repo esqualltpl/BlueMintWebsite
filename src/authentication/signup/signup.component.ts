@@ -85,12 +85,18 @@ export class SignupComponent {
           } else {
             this.isError = true;
             this.isSuccess = false;
+            this.errorMessage=response.message;
+                          this.isSubmit=false;
+
           }
         },
         (error) => {
           this.loader.hide();
           this.isError = true;
           this.isSuccess = false;
+                      this.errorMessage=error;
+              this.isSubmit=false;
+
         }
       );
   }

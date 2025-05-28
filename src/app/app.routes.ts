@@ -11,6 +11,7 @@ import { CustomersignupComponent } from '../authentication/customersignup/custom
 import { ForgotpasswordComponent } from '../authentication/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from '../authentication/resetpassword/resetpassword.component';
 import { SignupinsuranceComponent } from '../authentication/signupinsurance/signupinsurance.component';
+import { StaffsignupComponent } from '../authentication/staffsignup/staffsignup.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,7 @@ export const routes: Routes = [
       { path: 'resetpassword/:code', component: ResetpasswordComponent },
       { path: 'forgotpassword', component: ForgotpasswordComponent },
       { path: 'customersignup/:id', component: CustomersignupComponent },
+      { path: 'staffsignup/:id', component: StaffsignupComponent },
       { path: 'cookiepolicy', component: CookiepolicyComponent },
       { path: 'privacypolicy', component: PrivacypolicyComponent },
       { path: 'termsofuse', component: TermsofuseComponent },

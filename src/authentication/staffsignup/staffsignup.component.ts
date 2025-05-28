@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from '../../shared/services/http-service';  // Import HttpService
 import { CommonService } from '../../shared/services/common-service';
 import { ApiResponse } from '../../shared/interfaces/response';
@@ -10,35 +10,32 @@ import { ReactiveFormsModule } from '@angular/forms';  // Import ReactiveFormsMo
 import { environment } from "../../environments/environment.prod";
 
 @Component({
-  selector: 'app-signupinsurance',
+  selector: 'app-staffsignup',
   standalone: true,
 
   imports: [NgIf, FormsModule,CommonModule,ReactiveFormsModule], 
 
-  templateUrl: './signupinsurance.component.html',
-  styleUrl: './signupinsurance.component.css'
+  templateUrl: './staffsignup.component.html',
+  styleUrl: './staffsignup.component.css'
 })
-export class SignupinsuranceComponent {
+export class StaffsignupComponent {
   isNightMode = false;
   isSubmit=false;
-
+  id!: number;
   isValid = true;
   urlredirect=environment.redirectUrl
   isSuccess: boolean = false;
   isError: boolean = false;
   successMessage: string="";
-  errorMessage: string="";
+  errorMessage:string="";
   signupForm: FormGroup = new FormGroup({
-    BusinessName: new FormControl('', Validators.required),
-    FirstName: new FormControl('', Validators.required),
 
-    LastName: new FormControl('', Validators.required),
+    id: new FormControl(''),
 
     email: new FormControl('', Validators.required),
 
     password: new FormControl('', Validators.required),
-    Role:new FormControl("Financial Advisor"),
-    type:new FormControl(),
+    Role:new FormControl("External User")
   });
 
   constructor(
@@ -46,9 +43,46 @@ export class SignupinsuranceComponent {
     private fb: FormBuilder,
     private loader: NgxSpinnerService,
     private httpService: HttpService,  // Inject HttpService here
-    public commonService: CommonService
-  ) {}
+    public commonService: CommonService,
+        private route: ActivatedRoute
 
+  ) {
+    this.route.paramMap.subscribe(params => {
+            const idParam = params.get('id');
+
+     if (idParam) {
+        this.id = +idParam; // convert to number
+        this.getCustomerData(this.id); // call the API to get customer data
+      }
+
+    });
+  }
+getCustomerData(id: number) {
+    this.loader.show();
+    const url = `${this.commonService.apiEndPoints.Getstaff}?id=${id}`;
+    this.httpService.get<ApiResponse<any>>(url).subscribe(
+      (response) => {
+        this.loader.hide();
+        console.log(response);
+        if (response.status === 'success' && response.data) {
+          this.signupForm.patchValue({
+            id: this.id,
+            email: response.data.email // patch email
+          });
+        } else {
+          this.isError = true;
+                  this.errorMessage="Invalid link";
+        }
+      },
+      (error) => {
+        this.loader.hide();
+        this.isError = true;
+        this.errorMessage="Invalid link";
+
+        //console.error('Error fetching customer data:', error);
+      }
+    );
+  }
   signup() {
     console.log(this.signupForm.value);
       if (this.isMobileDevice()) {
@@ -61,11 +95,10 @@ export class SignupinsuranceComponent {
       this.signupForm.markAllAsTouched();
       return;
     }
-        this.signupForm.get('type')?.setValue(2);
-
+    this.signupForm.get('id')?.setValue(this.id);
     this.isSubmit=true;
     this.loader.show();
-    this.httpService.post<ApiResponse<any>>(this.commonService.apiEndPoints.Register, this.signupForm.value)
+    this.httpService.post<ApiResponse<any>>(this.commonService.apiEndPoints.Staffregister, this.signupForm.value)
       .subscribe(
         (response) => {
           console.log(response)
@@ -78,22 +111,21 @@ export class SignupinsuranceComponent {
             setTimeout(() => {
               window.location.href =this.urlredirect+ '/Account/RegisterConfirmation/' + response.data;
               this.isSubmit=false;
-
+   
             },500);
           } else {
             this.isError = true;
             this.isSuccess = false;
+                          this.isSubmit=false;
             this.errorMessage=response.message;
-            this.isSubmit=false;
-
           }
         },
         (error) => {
           this.loader.hide();
           this.isError = true;
           this.isSuccess = false;
-         this.errorMessage=error;
-        this.isSubmit=false;
+          this.errorMessage=error;
+              this.isSubmit=false;
 
         }
       );

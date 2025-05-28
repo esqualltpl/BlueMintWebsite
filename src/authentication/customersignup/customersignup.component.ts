@@ -71,11 +71,14 @@ getCustomerData(id: number) {
           });
         } else {
           this.isError = true;
+                  this.errorMessage="Invalid link";
         }
       },
       (error) => {
         this.loader.hide();
         this.isError = true;
+        this.errorMessage="Invalid link";
+
         //console.error('Error fetching customer data:', error);
       }
     );
@@ -108,17 +111,22 @@ getCustomerData(id: number) {
             setTimeout(() => {
               window.location.href =this.urlredirect+ '/Account/RegisterConfirmation/' + response.data;
               this.isSubmit=false;
-
+   
             },500);
           } else {
             this.isError = true;
             this.isSuccess = false;
+                          this.isSubmit=false;
+            this.errorMessage=response.message;
           }
         },
         (error) => {
           this.loader.hide();
           this.isError = true;
           this.isSuccess = false;
+          this.errorMessage=error;
+              this.isSubmit=false;
+
         }
       );
   }
