@@ -73,7 +73,14 @@ export class LoginComponent {
             window.location.href =this.urlredirect+ '/Account/Login/' + response.id+"/"+ response.token;
             this.isSubmit=false;
 
-          } else {
+          } 
+          else if(response.status=="verificationrequired")
+          {
+                          window.location.href =this.urlredirect+ '/Account/RegisterConfirmation/' + response.data;
+            this.isSubmit=false;
+
+          }
+          else {
             this.isError = true;
             this.isSubmit=false;
             this.errorMessage = "Invalid email or password.";

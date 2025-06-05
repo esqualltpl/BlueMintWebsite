@@ -7,6 +7,11 @@
     font-family: Clarity City, sans-serif;
 }
 
+@media (max-width: 500px) {
+  .display1 {
+    font-size: 60px;
+  }
+}
 p {
     font-family: Clarity City, sans-serif;
     color: #dadada !important;
@@ -48,7 +53,11 @@ p {
     color: whitesmoke;
     font-family: Clarity City, sans-serif;
 }
-
+@media (max-width: 500px) {
+  .display2 {
+    font-size: 45px;
+  }
+}
 .heading-h3-size {
     font-size: 24px;
     font-weight: 700;
@@ -90,7 +99,11 @@ p {
     line-height: .99em;
     font-family: Clarity City, sans-serif;
 }
-
+@media (max-width: 500px) {
+  .h2-quote {
+    font-size: 50px;
+  }
+}
 .submitbtn {
     background-color: #262746 !important;
 }
@@ -115,4 +128,13 @@ p {
 
 .btn-primary {
     font-family: Clarity City, sans-serif;
+}
+
+@media screen and (max-width: 479px) {
+  .tabs-menucustome {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    flex-flow: nowrap;
+    flex-wrap: nowrap;
+  }
 }
