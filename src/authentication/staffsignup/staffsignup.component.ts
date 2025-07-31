@@ -109,7 +109,7 @@ getCustomerData(id: number) {
             this.successMessage = response.message || 'Successfully registered! Please check your email to confirm.';
 
             setTimeout(() => {
-              window.location.href =this.urlredirect+ '/Account/RegisterConfirmation/' + response.data;
+              window.location.href ='/emailconfirm/' + response.data;
               this.isSubmit=false;
    
             },500);

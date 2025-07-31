@@ -10,7 +10,8 @@ export interface BaseResponse {
   success:boolean;
   status: string;
   token:string;
-  id:string
+  id:string;
+  email:string;
 
 }
 export interface ApiResponse<T> extends BaseResponse {

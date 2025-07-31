@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-9">
+            <div class="boundary-login my-5">
+                <div class="card card bg-transparent border-0">
+                    <div class="card-body text-center">
+                        <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                            <img src="Images/iconlogo.png" />
+                            <h2 class="display2 my-4">Create Account</h2>
+                            <!-- <p class="color-neutral-400">Are you an adviser or customer?</p>
+                            
+                            <div class="col-12 d-flex justify-content-center">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="flexRadioDefault1" formControlName="Role" value="Financial Advisor">
+                                <label class="form-check-label" for="flexRadioDefault1">Adviser</label>
+                              </div>
+                              <div class="form-check ms-3">
+                                <input class="form-check-input" type="radio" id="flexRadioDefault2" formControlName="Role" value="Client">
+                                <label class="form-check-label" for="flexRadioDefault2">Customer</label>
+                              </div>
+                            </div> -->
+                          
+                            <!-- Business Name Input (only if Financial Adviser selected) -->
+                            <div class="col-12 mt-3" *ngIf="signupForm.get('Role')?.value === 'Financial Advisor'">
+                              <input maxlength="256" formControlName="BusinessName" data-name="Name 4" placeholder="Enter business Name"
+                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('BusinessName')?.invalid && signupForm.get('BusinessName')?.touched" class="text-danger">
+                                Business name is required.
+                              </div>
+                            </div>
+                          
+                            <!-- First Name Input -->
+                            <div class="col-12 mt-3">
+                              <input maxlength="256" formControlName="FirstName" data-name="Name 4" placeholder="Enter first name"
+                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('FirstName')?.invalid && signupForm.get('FirstName')?.touched" class="text-danger">
+                                First name is required.
+                              </div>
+                            </div>
+                          
+                            <!-- Last Name Input -->
+                            <div class="col-12 mt-3">
+                              <input maxlength="256" formControlName="LastName" data-name="Name 4" placeholder="Enter last name"
+                                     type="text" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('LastName')?.invalid && signupForm.get('LastName')?.touched" class="text-danger">
+                                Last name is required.
+                              </div>
+                            </div>
+                          
+                            <!-- Email Input -->
+                            <div class="col-12 mt-3">
+                              <input maxlength="256" formControlName="email" data-name="Name 4" placeholder="Enter your email"
+                                     type="email" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-danger">
+                                Please enter a valid email.
+                              </div>
+                            </div>
+                          
+                            <!-- Password Input -->
+                            <div class="col-12 mt-3">
+                              <input maxlength="256" formControlName="password" data-name="Name 4" placeholder="Enter your password"
+                                     type="password" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
+                              <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger">
+                                Password is required.
+                              </div>
+                            </div>
+                          
+                            <!-- Terms and Conditions -->
+                            <div class="col-12 mt-3 text-left">
+                              <label><input type="checkbox" class="me-3" /> I agree to Bluemint's <a class="text-info1" href="/termsofuse" >Term Of Use</a> and <a class="text-info1" href="/privacypolicy" >Privacy Policy </a>. </label>
+                            </div>
+                           <!-- Success or Error Messages -->
+                           <div *ngIf="isSuccess" class="alert alert-success mt-3">
+                            {{ successMessage }}
+                          </div>
+                          <div *ngIf="isError" class="alert alert-danger mt-3">
+                            {{ errorMessage }}
+                          </div>
+                            <!-- Submit Button -->
+                            <div *ngIf="isSubmit" class="co-12 mt-3">
+                                
+                              <button type="button" disabled class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                  Sign In</button>
+                      </div>
+                      <div *ngIf="!isSubmit" class="co-12 mt-3">
+                          <button type="submit" class="btn-primary text-dark w-button bg-info1 w-100 btnpading" >
+                              Sign In</button>
+                     </div>
+                          
+                            <!-- Alternative Sign in options -->
+                            <!-- <div class="col-12 mt-3">
+                              <div class="or-divider">
+                                <span class="or-text">OR</span>
+                              </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                              <button class="btn-primary text-dark w-button bg-info1 w-100 btnpading"><img
+                                      src="Images/google.svg" width="24" class="me-3" /> Sign in with Google</button>
+                            </div>
+                            <div class="col-12 mt-3">
+                              <button class="btn-primary text-dark w-button bg-info1 w-100 btnpading"><img
+                                      src="Images/facebook.svg" width="24" class="me-3" /> Sign in with Facebook</button>
+                            </div> -->
+                          
+                            <!-- Login Link -->
+                            <div class="col-12 mt-3">
+                              <p class="textwhite">Already have an account? <a href="/login" class="text-info1"><u>Log in.</u></a></p>
+                            </div>
+                            
+                           
+                          </form>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

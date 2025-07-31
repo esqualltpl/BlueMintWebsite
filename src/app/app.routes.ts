@@ -12,6 +12,8 @@ import { ForgotpasswordComponent } from '../authentication/forgotpassword/forgot
 import { ResetpasswordComponent } from '../authentication/resetpassword/resetpassword.component';
 import { SignupinsuranceComponent } from '../authentication/signupinsurance/signupinsurance.component';
 import { StaffsignupComponent } from '../authentication/staffsignup/staffsignup.component';
+import { EmailconfirmationComponent } from '../authentication/emailconfirmation/emailconfirmation.component';
+import { SignupmortgageComponent } from '../authentication/signupmortgage/signupmortgage.component';
 
 export const routes: Routes = [
   {
@@ -23,7 +25,9 @@ export const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'signupinsurance', component: SignupinsuranceComponent },
+      { path: 'signupmortgage', component: SignupmortgageComponent },
       { path: 'twofactorauthentication/:email', component: TwofactorauthenticationComponent },
+      { path: 'emailconfirm/:email', component: EmailconfirmationComponent },
       { path: 'resetpassword/:code', component: ResetpasswordComponent },
       { path: 'forgotpassword', component: ForgotpasswordComponent },
       { path: 'customersignup/:id', component: CustomersignupComponent },

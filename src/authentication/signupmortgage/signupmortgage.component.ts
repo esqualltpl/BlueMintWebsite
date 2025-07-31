@@ -10,15 +10,15 @@ import { ReactiveFormsModule } from '@angular/forms';  // Import ReactiveFormsMo
 import { environment } from "../../environments/environment.prod";
 
 @Component({
-  selector: 'app-signupinsurance',
+  selector: 'app-signupmortgage',
   standalone: true,
 
   imports: [NgIf, FormsModule,CommonModule,ReactiveFormsModule], 
 
-  templateUrl: './signupinsurance.component.html',
-  styleUrl: './signupinsurance.component.css'
+  templateUrl: './signupmortgage.component.html',
+  styleUrl: './signupmortgage.component.css'
 })
-export class SignupinsuranceComponent {
+export class SignupmortgageComponent {
   isNightMode = false;
   isSubmit=false;
 
@@ -61,7 +61,7 @@ export class SignupinsuranceComponent {
       this.signupForm.markAllAsTouched();
       return;
     }
-        this.signupForm.get('type')?.setValue(2);
+        this.signupForm.get('type')?.setValue(3);
 
     this.isSubmit=true;
     this.loader.show();

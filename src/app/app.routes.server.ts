@@ -17,6 +17,10 @@ export const serverRoutes: ServerRoute[] = [
     path: 'staffsignup/:id',
     renderMode: RenderMode.Server // or RenderMode.Client
   },
+   {
+    path: 'emailconfirm/:email',
+    renderMode: RenderMode.Server // or RenderMode.Client
+  },
   
   {
     path: '**',
