@@ -28,16 +28,35 @@ export class CustomersignupComponent {
   isError: boolean = false;
   successMessage: string="";
   errorMessage:string="";
-  signupForm: FormGroup = new FormGroup({
 
-    id: new FormControl(''),
+signupForm: FormGroup = new FormGroup({    id: new FormControl(''),
 
-    email: new FormControl('', Validators.required),
+  email: new FormControl('', [Validators.required, Validators.email]),
 
-    password: new FormControl('', Validators.required),
-    Role:new FormControl("Client")
+  password: new FormControl('', [
+    Validators.required,
+    Validators.minLength(8),
+    // at least 1 lower, 1 upper, 1 digit, 1 special
+    Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%^&*()_+\-=[\]{};':"\\|,.<>/?@]).+$/)
+  ]),
+  confirmpassword: new FormControl('', Validators.required),
+
+    Role:new FormControl("Client"),
+});
+get f() { return this.signupForm.controls; }
+
+ngOnInit() {
+  // auto-check mismatch without custom validator
+  this.signupForm.get('confirmpassword')?.valueChanges.subscribe(val => {
+    if (val && this.f['password'].value !== val) {
+      this.f['confirmpassword'].setErrors({ passwordMismatch: true });
+    } else {
+      if (this.f['confirmpassword'].hasError('passwordMismatch')) {
+        this.f['confirmpassword'].setErrors(null);
+      }
+    }
   });
-
+}
   constructor(
     private router: Router,
     private fb: FormBuilder,

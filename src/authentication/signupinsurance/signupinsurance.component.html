@@ -56,15 +56,54 @@
                               </div>
                             </div>
                           
-                            <!-- Password Input -->
-                            <div class="col-12 mt-3">
-                              <input maxlength="256" formControlName="password" data-name="Name 4" placeholder="Enter your password"
-                                     type="password" id="Name-4" required class="bg-transparent input-copy new w-input color-neutral-400">
-                              <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger">
-                                Password is required.
+                           <!-- Password -->
+                              <div class="col-12 mt-3">
+                                <input maxlength="256"
+                                      formControlName="password"
+                                      placeholder="Enter your password"
+                                      type="password"
+                                      class="bg-transparent input-copy new w-input color-neutral-400">
+
+                                <!-- Required -->
+                                <div *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched"
+                                    class="text-danger">
+                                  Password is required.
+                                </div>
+
+                                <!-- Too short -->
+                                <div *ngIf="signupForm.get('password')?.hasError('minlength') && signupForm.get('password')?.touched"
+                                    class="text-danger">
+                                  Password must be at least 8 characters.
+                                </div>
+
+                                <!-- Pattern fail (missing upper/lower/digit/special) -->
+                                <div *ngIf="signupForm.get('password')?.hasError('pattern') && signupForm.get('password')?.touched"
+                                    class="text-danger">
+                                  Password must contain uppercase, lowercase, a number, and a special character.
+                                </div>
                               </div>
-                            </div>
-                          
+
+                              <!-- Confirm Password -->
+                              <div class="col-12 mt-3">
+                                <input maxlength="256"
+                                      formControlName="confirmpassword"
+                                      placeholder="Confirm your password"
+                                      type="password"
+                                      class="bg-transparent input-copy new w-input color-neutral-400">
+
+                                <!-- Required -->
+                                <div *ngIf="f['confirmpassword'].hasError('required') && f['confirmpassword'].touched"
+                                    class="text-danger">
+                                  Confirm password is required.
+                                </div>
+
+                                <!-- Mismatch -->
+                                <div *ngIf="f['confirmpassword'].hasError('passwordMismatch') && f['confirmpassword'].touched"
+                                    class="text-danger">
+                                  Passwords do not match.
+                                </div>
+                              </div>
+
                             <!-- Terms and Conditions -->
                             <div class="col-12 mt-3 text-left">
                               <label><input type="checkbox" class="me-3" /> I agree to Bluemint's <a class="text-info1" href="/termsofuse" >Term Of Use</a> and <a class="text-info1" href="/privacypolicy" >Privacy Policy </a>. </label>

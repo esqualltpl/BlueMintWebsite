@@ -28,15 +28,35 @@ export class StaffsignupComponent {
   isError: boolean = false;
   successMessage: string="";
   errorMessage:string="";
-  signupForm: FormGroup = new FormGroup({
+ signupForm: FormGroup = new FormGroup({
+  email: new FormControl('', [Validators.required, Validators.email]),
 
-    id: new FormControl(''),
+  password: new FormControl('', [
+    Validators.required,
+    Validators.minLength(8),
+    // at least 1 lower, 1 upper, 1 digit, 1 special
+    Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%^&*()_+\-=[\]{};':"\\|,.<>/?@]).+$/)
+  ]),
+  confirmpassword: new FormControl('', Validators.required),
 
-    email: new FormControl('', Validators.required),
+  Role: new FormControl('Financial Advisor'),
+  type: new FormControl(),
+});
+get f() { return this.signupForm.controls; }
 
-    password: new FormControl('', Validators.required),
-    Role:new FormControl("External User")
+ngOnInit() {
+  // auto-check mismatch without custom validator
+  this.signupForm.get('confirmpassword')?.valueChanges.subscribe(val => {
+    if (val && this.f['password'].value !== val) {
+      this.f['confirmpassword'].setErrors({ passwordMismatch: true });
+    } else {
+      if (this.f['confirmpassword'].hasError('passwordMismatch')) {
+        this.f['confirmpassword'].setErrors(null);
+      }
+    }
   });
+}
+
 
   constructor(
     private router: Router,
@@ -84,17 +104,14 @@ getCustomerData(id: number) {
     );
   }
   signup() {
+   
     console.log(this.signupForm.value);
       if (this.isMobileDevice()) {
     this.isError = true;
     this.errorMessage = "Login is only allowed from desktop devices.";
     return;
   }
-    // Mark all controls as touched to trigger validation messages
-    if (this.signupForm.invalid) {
-      this.signupForm.markAllAsTouched();
-      return;
-    }
+   
     this.signupForm.get('id')?.setValue(this.id);
     this.isSubmit=true;
     this.loader.show();

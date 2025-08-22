@@ -29,17 +29,37 @@ export class SignupmortgageComponent {
   successMessage: string="";
   errorMessage: string="";
   signupForm: FormGroup = new FormGroup({
-    BusinessName: new FormControl('', Validators.required),
-    FirstName: new FormControl('', Validators.required),
+  BusinessName: new FormControl('', Validators.required),
+  FirstName: new FormControl('', Validators.required),
+  LastName: new FormControl('', Validators.required),
+  email: new FormControl('', [Validators.required, Validators.email]),
 
-    LastName: new FormControl('', Validators.required),
+  password: new FormControl('', [
+    Validators.required,
+    Validators.minLength(8),
+    // at least 1 lower, 1 upper, 1 digit, 1 special
+    Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%^&*()_+\-=[\]{};':"\\|,.<>/?@]).+$/)
+  ]),
+  confirmpassword: new FormControl('', Validators.required),
 
-    email: new FormControl('', Validators.required),
+  Role: new FormControl('Financial Advisor'),
+  type: new FormControl(),
+});
+get f() { return this.signupForm.controls; }
 
-    password: new FormControl('', Validators.required),
-    Role:new FormControl("Financial Advisor"),
-    type:new FormControl(),
+ngOnInit() {
+  // auto-check mismatch without custom validator
+  this.signupForm.get('confirmpassword')?.valueChanges.subscribe(val => {
+    if (val && this.f['password'].value !== val) {
+      this.f['confirmpassword'].setErrors({ passwordMismatch: true });
+    } else {
+      if (this.f['confirmpassword'].hasError('passwordMismatch')) {
+        this.f['confirmpassword'].setErrors(null);
+      }
+    }
   });
+}
+
 
   constructor(
     private router: Router,
